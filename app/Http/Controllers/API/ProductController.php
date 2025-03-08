@@ -5,6 +5,8 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Log;
+
 class ProductController extends Controller
 {
     public function index()
@@ -15,12 +17,13 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        Log::info('Received request data:', $request->all());
         $validated = $request->validate([
             'category_id' => 'required|exists:categories,id',
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'main_photo_url' => 'required|string',
-            'instagram_link' => 'nullable|string'
+            'instagram_link' => 'required|string'
         ]);
 
         $product = Product::create($validated);
@@ -48,7 +51,7 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'main_photo_url' => 'required|string',
-            'instagram_link' => 'nullable|string'
+            'instagram_link' => 'required|string'
         ]);
 
         $product->update($validated);

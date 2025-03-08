@@ -9,6 +9,7 @@ class ProductGallery extends Model
 {
     use HasFactory;
 
+    protected $table = 'product_gallery';
     protected $fillable = ['product_id', 'photo_url'];
 
     public function product()

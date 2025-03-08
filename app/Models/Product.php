@@ -9,14 +9,20 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'main_photo_url', 'instagram_link'];
+    protected $fillable = [
+        'category_id',
+        'name', 
+        'description', 
+        'main_photo_url', 
+        'instagram_link'
+    ];
 
     public function category()
     {
         return $this->belongsTo(Categories::class);
     }
 
-    public function gallery()
+    public function galleries()
     {
         return $this->hasMany(ProductGallery::class);
     }

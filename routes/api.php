@@ -17,18 +17,19 @@ use App\Http\Controllers\API\ProductController;
 */
 
 // Public routes
+// Public routes
 Route::post('/auth/login', [AuthController::class, 'login']);
-
-// Protected routes
-Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/auth/logout', [AuthController::class, 'logout']);
-    Route::get('/auth/me', [AuthController::class, 'me']);
-});
-
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/{product}', [ProductController::class, 'show']);
 
 // Protected routes
 Route::middleware('auth:sanctum')->group(function () {
-    Route::apiResource('products', ProductController::class)->except(['index', 'show']);
+    // Auth routes
+    Route::post('/auth/logout', [AuthController::class, 'logout']);
+    Route::get('/auth/me', [AuthController::class, 'me']);
+    
+    // Product routes (create, update, delete)
+    Route::post('/products', [ProductController::class, 'store']);
+    Route::put('/products/{product}', [ProductController::class, 'update']);
+    Route::delete('/products/{product}', [ProductController::class, 'destroy']);
 });
