@@ -23,7 +23,6 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'main_photo_url' => 'required|string',
-            'instagram_link' => 'required|string'
         ]);
 
         $product = Product::create($validated);
@@ -51,7 +50,6 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'main_photo_url' => 'required|string',
-            'instagram_link' => 'required|string'
         ]);
 
         $product->update($validated);

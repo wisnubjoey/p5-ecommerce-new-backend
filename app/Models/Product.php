@@ -14,7 +14,6 @@ class Product extends Model
         'name', 
         'description', 
         'main_photo_url', 
-        'instagram_link'
     ];
 
     public function category()
