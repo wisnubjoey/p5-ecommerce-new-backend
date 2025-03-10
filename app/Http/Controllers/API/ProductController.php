@@ -52,6 +52,7 @@ class ProductController extends Controller
             'description' => 'required|string',
             'main_photo_url' => 'required|string',
             'price' => 'required|numeric|min:0',
+            'stock' => 'required|integer|min:0',
         ]);
 
         $product->update($validated);
