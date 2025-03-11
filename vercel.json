@@ -12,6 +12,9 @@
             "dest": "/api/index.php"
         }
     ],
+    "buildCommand": "php artisan optimize",
+    "outputDirectory": "public",
+    "devCommand": "php artisan serve",
     "env": {
         "APP_NAME": "Laravel",
         "APP_ENV": "production",
