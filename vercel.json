@@ -6,23 +6,19 @@
       }
     },
     "routes": [
-      {
-        "src": "/img/(.*)",
-        "dest": "public/img/"
-      },
-      {
-        "src": "/build/(.*)",
-        "dest": "public/build/"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/api/index.php"
-      }
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
     ],
     "env": {
       "CACHE_STORE": "array",
       "LOG_CHANNEL": "stderr",
       "SESSION_DRIVER": "cookie",
+
+      "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "APP_URL": "http://localhost",
   
       "APP_CONFIG_CACHE": "/tmp/config.php",
       "APP_EVENTS_CACHE": "/tmp/events.php",
