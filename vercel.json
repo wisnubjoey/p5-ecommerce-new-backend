@@ -20,9 +20,9 @@
         }
     },
     "env": {
-      "CACHE_STORE": "array",
+      "CACHE_DRIVER": "array",
       "LOG_CHANNEL": "stderr",
-      "SESSION_DRIVER": "cookie",
+      "SESSION_DRIVER": "array",
 
       "APP_ENV": "production",
         "APP_DEBUG": "true",
