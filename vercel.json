@@ -1,27 +1,24 @@
 {
     "version": 2,
     "routes": [
-        {
-            "src": "/api/(.*)",  
-            "dest": "/api/index.php"
-        },
-        {
-            "src": "/(css|js|images|fonts)/(.*)",  
-            "dest": "/public/$1/$2"
-        },
-        {
-            "src": "/(.*)",  
-            "dest": "/api/index.php",
-            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-        }
-    ],
-    "functions": {
-        "api/*.php": {
-            "runtime": "vercel-php@0.6.0"
-        }
-    },
-    "buildCommand": "",
-    "outputDirectory": "public",
+         {
+             "src": "/api/(.*)",  
+             "dest": "/api/index.php"
+         },
+         {
+             "src": "/(css|js|images|fonts)/(.*)",  
+             "dest": "/public/$1/$2"
+         },
+         {
+             "src": "/(.*)",  
+             "dest": "/api/index.php"
+         }
+     ],
+     "functions": {
+         "api/index.php": {
+             "runtime": "vercel-php@0.6.0"
+         }
+     },
     "env": {
 
 "APP_NAME": "Laravel",
