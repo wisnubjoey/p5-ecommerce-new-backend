@@ -15,7 +15,7 @@
         }
     ],
     "functions": {
-        "api/*.php": {
+        "api/index.php": {
             "runtime": "vercel-php@0.6.0"
         }
     },
@@ -26,8 +26,7 @@
 
       "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://p5-ecommerce-new-backend-cs1u.vercel.app",
-        "FRONTEND_URL": "https://p5-ecommerce-new-frontend.vercel.app",
+        "APP_URL": "https://p5-ecommerce-new-backend-cs1u.vercel.app/",
   
       "APP_CONFIG_CACHE": "/tmp/config.php",
       "APP_EVENTS_CACHE": "/tmp/events.php",
